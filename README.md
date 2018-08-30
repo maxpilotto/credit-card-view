@@ -5,6 +5,17 @@
 
 A fully customizable Android view that can display credit card's informations
 
+# Usage
+### XML
+```xml
+
+```
+
+### Java
+```Java
+
+```
+
 # Documentation
 
 Xml Attribute | Value/Type | Description 
