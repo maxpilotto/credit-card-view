@@ -12,7 +12,7 @@ Xml Attribute | Value/Type | Description
 genericCardBackground | color/reference |Card background for when the number is not known
 visaCardBackground| color/reference |Card background for when the number belongs to Visa
 mastercardCardBackground| color/reference |Card background for when the number belongs to Mastercard
-americanExpressCardBackground||Card background for when the number belongs to American Express
+americanExpressCardBackground|color/reference |Card background for when the number belongs to American Express
 dinersClubCardBackground| color/reference |Card background for when the number belongs to Diners Club
 discoverCardBackground| color/reference |Card background for when the number belongs to Discover
 jcbCardBackground| color/reference |Card background for when the number belongs to JCB
