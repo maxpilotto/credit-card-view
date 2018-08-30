@@ -8,7 +8,44 @@ A fully customizable Android view that can display credit card's informations
 # Usage
 ### XML
 ```xml
+<!-- American express card -->
+ <com.maxpilotto.creditcardview.CreditCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:number="341635298762981"
+        app:numberVisibility="show"
+        app:numberHint="****************"
+        app:hideChar="*"
+        app:cardHolder="John Smith"
+        app:expireDate="0219"
+        app:cvv="123"
+        app:digits="15"
+        app:cardNumberGroupSize="3"/>
 
+<!-- Visa card -->
+<com.maxpilotto.creditcardview.CreditCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:number="4601412314141414"
+        app:numberVisibility="show"
+        app:numberHint="****************"
+        app:hideChar="*"
+        app:cardHolder="John Smith"
+        app:expireDate="0219"
+        app:cvv="123"/>
+
+<!-- Visa with custom background -->
+ <com.maxpilotto.creditcardview.CreditCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:number="4601412314141414"
+        app:numberVisibility="show"
+        app:numberHint="****************"
+        app:hideChar="*"
+        app:cardHolder="John Smith"
+        app:expireDate="0219"
+        app:cvv="123"
+        app:visaCardBackground="@android:color/red"/>  
 ```
 
 ### Java
