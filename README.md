@@ -50,7 +50,23 @@ A fully customizable Android view that can display credit card's informations
 
 ### Java
 ```Java
-
+// American express card
+CreditCardView card = new CreditCardView(this);
+card.setCardNumber("341635298762981");
+card.setNumberVisibility(CreditCardView.NumberVisibility.SHOW);
+card.setCardNumberHint("****************");
+card.setHideChar('*');
+card.setCardHolder("John Smith");
+card.setExpiry("0219");
+card.setCVV("123");
+card.setCardDigits(15);
+card.setCardNumberGroupSize(3);
+```
+<br/>You can also copy an existing card's style, this will only copy the style (colors,hints,background) and not the values (number,holder,cvv)
+```Java
+// American express card
+CreditCardView copiedCard = CreditCardView.copyFrom(((CreditCardView)findViewById(R.id.card1)));
+card.setCardNumber("341635298762981");
 ```
 
 # Documentation
@@ -107,7 +123,7 @@ cvvHintColor|color/reference|CVV hint text color
 
 Note: Raw colors are not supported, use references instead (E.g. "R.color.red" instead of "#ff0000")
 
-</br>JavaDoc is available [here](https://maxpilotto.github.io/credit-card-view)
+JavaDoc is available [here](https://maxpilotto.github.io/credit-card-view)
 
 # License
 This is made available under the terms of the GPLv3. <br/>
