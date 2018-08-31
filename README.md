@@ -64,7 +64,6 @@ card.setCardNumberGroupSize(3);
 ```
 <br/>You can also copy an existing card's style, this will only copy the style (colors,hints,background) and not the values (number,holder,cvv)
 ```Java
-// American express card
 CreditCardView copiedCard = CreditCardView.copyFrom(((CreditCardView)findViewById(R.id.card1)));
 card.setCardNumber("341635298762981");
 ```
