@@ -1617,7 +1617,7 @@ public class CreditCardView extends LinearLayout {
     /**
      * Returns the china unionpay card background
      *
-     * @return
+     * @return  Background drawable
      */
     public Drawable getChinaUnionpayCardBackground() {
         return chinaUnionpayCardBackground;
