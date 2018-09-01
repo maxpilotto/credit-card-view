@@ -148,10 +148,6 @@ public class CreditCardView extends LinearLayout {
 
         @Override public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             setCardHolder(charSequence.toString());
-
-            if (flipOnFrontDataEdit) {
-                flip(false);
-            }
         }
 
         @Override public void afterTextChanged(Editable editable) {
@@ -163,10 +159,6 @@ public class CreditCardView extends LinearLayout {
 
         @Override public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             setExpiry(charSequence.toString());
-
-            if (flipOnFrontDataEdit) {
-                flip(false);
-            }
         }
 
         @Override public void afterTextChanged(Editable editable) {
@@ -178,10 +170,6 @@ public class CreditCardView extends LinearLayout {
 
         @Override public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             setCVV(charSequence.toString());
-
-            if (flipOnCVVEdit) {
-                flip(true);
-            }
         }
 
         @Override public void afterTextChanged(Editable editable) {
@@ -193,10 +181,6 @@ public class CreditCardView extends LinearLayout {
 
         @Override public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             setCardNumber(charSequence.toString());
-
-            if (flipOnFrontDataEdit) {
-                flip(false);
-            }
         }
 
         @Override public void afterTextChanged(Editable editable) {
@@ -471,6 +455,10 @@ public class CreditCardView extends LinearLayout {
             }
 
             @Override public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (flipOnFrontDataEdit) {
+                    flip(false);
+                }
+
                 if (errorsEnabled && listener != null) {
                     if (StringUtils.isEmpty(charSequence)) {
                         listener.onError("No card number", Error.CARD_NUMBER_EMPTY);
@@ -493,6 +481,10 @@ public class CreditCardView extends LinearLayout {
             }
 
             @Override public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (flipOnFrontDataEdit) {
+                    flip(false);
+                }
+
                 if (errorsEnabled && listener != null) {
                     if (StringUtils.isEmpty(creditCard.getExpireDate())) {
                         listener.onError("No expire date", Error.EXPIRY_EMPTY);
@@ -518,6 +510,9 @@ public class CreditCardView extends LinearLayout {
             }
 
             @Override public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (flipOnFrontDataEdit) {
+                    flip(false);
+                }
                 if (errorsEnabled && listener != null) {
                     if (StringUtils.isEmpty(creditCard.getCardHolder())) {
                         listener.onError("No card holder", Error.CARD_HOLDER_EMPTY);
@@ -534,6 +529,10 @@ public class CreditCardView extends LinearLayout {
             }
 
             @Override public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (flipOnCVVEdit) {
+                    flip(true);
+                }
+
                 if (errorsEnabled && listener != null) {
                     if (StringUtils.isEmpty(creditCard.getCVV())) {
                         listener.onError("No CVV", Error.CVV_EMPTY);
