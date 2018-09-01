@@ -7,7 +7,7 @@ A fully customizable Android view that can display credit card's informations
 
 # Usage
 ### XML
-```xml
+```Xml
 <!-- American express card -->
  <com.maxpilotto.creditcardview.CreditCardView
         android:layout_width="wrap_content"
@@ -47,6 +47,36 @@ A fully customizable Android view that can display credit card's informations
         app:cvv="123"
         app:visaCardBackground="@android:color/red"/>  
 ```
+As for the background, you can set a solid color (raw colors not supported) or your own drawable like the following
+
+```Xml
+<!-- visa_gradient.xml -->
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <corners android:radius="6dp" />
+    
+    <gradient
+        android:endColor="#ff0000"
+        android:startColor="#ff5555"
+        android:type="radial"
+        android:gradientRadius="500dp"/>
+
+</shape>
+```
+
+and then to set it you can do something like this
+
+```Xml
+<com.maxpilotto.creditcardview.CreditCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:visaCardBackground="@drawable/visa_gradient"
+        app:masterCardBackground="@drawable/mastercard"
+        app:americanExpressCardBackground="@color/dark_yellow"/>  
+```
 
 ### Java
 ```Java
@@ -64,7 +94,6 @@ card.setCardNumberGroupSize(3);
 ```
 <br/>You can also copy an existing card's style, this will only copy the style (colors,hints,background) and not the values (number,holder,cvv)
 ```Java
-// American express card
 CreditCardView copiedCard = CreditCardView.copyFrom(((CreditCardView)findViewById(R.id.card1)));
 card.setCardNumber("341635298762981");
 ```
