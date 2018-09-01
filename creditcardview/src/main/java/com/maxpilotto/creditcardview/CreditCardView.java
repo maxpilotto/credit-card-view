@@ -630,6 +630,7 @@ public class CreditCardView extends LinearLayout {
             hideChar = string.charAt(0);
         }
         setCardNumber(creditCard.getCardNumber());
+        setCVV(creditCard.getCVV());
     }
 
     /**
