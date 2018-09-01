@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/credit-card-view.iml" filepath="$PROJECT_DIR$/credit-card-view.iml" />
       <module fileurl="file://$PROJECT_DIR$/creditcardview/creditcardview.iml" filepath="$PROJECT_DIR$/creditcardview/creditcardview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
     </modules>
   </component>
 </project>
