@@ -1,9 +1,21 @@
-# credit-card-view [WIP]
+# credit-card-view
 
 [![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 A fully customizable Android view that can display credit card's informations
+
+# How to add it to your project
+* Download the lastest release, you can find it [here](https://github.com/maxpilotto/credit-card-view/releases) 
+* Open Android Studio and go to File > New > New module > Import .JAR/.AAR Package (Select the file downloaded previously)
+* Finally, add this to your module's build.gradle
+```gradle 
+dependencies {
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    
+    compile project(':credit-card-view')   //Add This line
+```
+
 
 # Usage
 ### XML
