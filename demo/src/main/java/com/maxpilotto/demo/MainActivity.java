@@ -117,57 +117,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ((EditText)findViewById(R.id.holder)).addTextChangedListener(new TextWatcher() {
-            @Override public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                card.setCardHolder(charSequence.toString());
-            }
-
-            @Override public void afterTextChanged(Editable editable) {
-
-            }
-        });
-        ((EditText)findViewById(R.id.number)).addTextChangedListener(new TextWatcher() {
-            @Override public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                card.setCardNumber(charSequence.toString());
-            }
-
-            @Override public void afterTextChanged(Editable editable) {
-
-            }
-        });
-        ((EditText)findViewById(R.id.expireDate)).addTextChangedListener(new TextWatcher() {
-            @Override public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                card.setExpiry(charSequence.toString());
-            }
-
-            @Override public void afterTextChanged(Editable editable) {
-
-            }
-        });
-        ((EditText)findViewById(R.id.cardCvv)).addTextChangedListener(new TextWatcher() {
-            @Override public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                card.setCVV(charSequence.toString());
-            }
-
-            @Override public void afterTextChanged(Editable editable) {
-
-            }
-        });
+        card.pairInputText((EditText)findViewById(R.id.cardCvv), CreditCardView.InputType.CARD_CVV);
+        card.pairInputText((EditText)findViewById(R.id.expireDate), CreditCardView.InputType.CARD_EXPIRY);
+        card.pairInputText((EditText)findViewById(R.id.number), CreditCardView.InputType.CARD_NUMBER);
+        card.pairInputText((EditText)findViewById(R.id.holder), CreditCardView.InputType.CARD_HOLDER);
     }
 }
