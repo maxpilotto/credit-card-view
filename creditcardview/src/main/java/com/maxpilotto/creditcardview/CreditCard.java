@@ -187,7 +187,7 @@ public class CreditCard {
      * Sets the CVV
      * @param CVV CVV
      */
-    public void setCVV(String CVV) {
+    public void setCvv(String CVV) {
         this.CVV = CVV;
     }
 
