@@ -558,7 +558,7 @@ public class CreditCardView extends LinearLayout {
      */
     public void setCVVVisibility(CvvVisibility cvvVisibility) {
         this.cvvVisibility = cvvVisibility;
-        cvv.setText(formatCVV(creditCard.getCardNumber()));
+        cvv.setText(formatCVV(creditCard.getCVV()));
     }
 
     /**
@@ -606,7 +606,7 @@ public class CreditCardView extends LinearLayout {
      * @param string Text
      */
     public void setCvvHint(String string) {
-        cvv.setHint(formatCVV(string));
+        cvv.setHint(string);
     }
 
     /**
@@ -629,6 +629,7 @@ public class CreditCardView extends LinearLayout {
         } else {
             hideChar = string.charAt(0);
         }
+        setCardNumber(creditCard.getCardNumber());
     }
 
     /**
@@ -731,7 +732,8 @@ public class CreditCardView extends LinearLayout {
         if (string == null) {
             cardNumber.setHint(DEFAULT_CARD_NUMBER_HINT);
         } else {
-            cardNumber.setHint(formatCardNumber(string));
+//            cardNumber.setHint(formatCardNumber(string));
+            cardNumber.setHint(string);
         }
     }
 
@@ -1245,7 +1247,7 @@ public class CreditCardView extends LinearLayout {
      * @param string CVV
      */
     public void setCVV(String string) {
-        creditCard.setCVV(string);
+        creditCard.setCvv(string);
         cvv.setText(formatCVV(string));
     }
 
@@ -1380,16 +1382,6 @@ public class CreditCardView extends LinearLayout {
      */
     public void flip(boolean flipped) {
         flip(flipped, true, false);
-    }
-
-    /**
-     * Flips the card based on the passed value, from right to left
-     *
-     * @param flipped    True if the back must be shown, False otherwise
-     * @param smoothFlip True if the animation must be shown, False otherwise
-     */
-    public void flip(boolean flipped, boolean smoothFlip) {
-        flip(flipped, smoothFlip, false);
     }
 
     /**
