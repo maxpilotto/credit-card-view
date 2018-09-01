@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cardWidth">300dp</dimen>
+    <dimen name="cardHeight">180dp</dimen>
+    <dimen name="errorTextSize">11sp</dimen>
+    <dimen name="logoSize">45dp</dimen>
+    <dimen name="labelTextSize">9sp</dimen>
+    <dimen name="textSizeLarge">18sp</dimen>
+    <dimen name="textSizeNormal">15sp</dimen>
+    <dimen name="cardCorner">8dp</dimen>
+</resources>
