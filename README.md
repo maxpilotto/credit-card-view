@@ -110,6 +110,8 @@ CreditCardView copiedCard = CreditCardView.copyFrom(((CreditCardView)findViewByI
 card.setCardNumber("341635298762981");
 ```
 
+# Check out the (Demo)[https://github.com/maxpilotto/credit-card-view/releases]
+
 # Documentation
 
 Xml Attribute | Value/Type | Description 
@@ -168,4 +170,4 @@ JavaDoc is available [here](http://toaststudio.altervista.org/docs/credit-card-v
 
 # License
 This is made available under the terms of the GPLv3. <br/>
-See the [LICENSE](https://github.com/maxpilotto/toggle-image-view/blob/master/LICENSE) file that accompanies this distribution for the full text of the license.
+See the [LICENSE](https://github.com/maxpilotto/credit-card-view/blob/master/LICENSE) file that accompanies this distribution for the full text of the license.
