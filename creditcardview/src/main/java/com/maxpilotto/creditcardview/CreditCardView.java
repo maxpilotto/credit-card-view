@@ -27,7 +27,7 @@ import org.apache.commons.lang3.StringUtils;
  * Date: 29/07/2018 @ 22:20
  * Package: com.maxpilotto.creditcardview
  */
-public class CreditCardView extends LinearLayout {
+public class CreditCardView extends LinearLayout implements View.OnClickListener {
     protected static final int DEFAULT_CARD_HOLDER_COLOR = android.R.color.white;
     protected static final boolean DEFAULT_FLIP_ON_CLICK_VALUE = true;
     protected static final int DEFAULT_GENERIC_COLOR = R.color.genericCardBackground;
@@ -311,7 +311,13 @@ public class CreditCardView extends LinearLayout {
         return copy;
     }
 
-    @Override public boolean onTouchEvent(MotionEvent event) {
+    @Override public boolean onInterceptTouchEvent(MotionEvent ev) {
+        onTouchEvent(ev);
+
+        return false;
+    }
+
+    @Override public void onClick(View view) {
         if (flipOnClick) {
             flip();
         }
@@ -319,8 +325,6 @@ public class CreditCardView extends LinearLayout {
         if (listener != null) {
             listener.onClick();
         }
-
-        return super.onTouchEvent(event);
     }
 
     /**
@@ -549,6 +553,8 @@ public class CreditCardView extends LinearLayout {
             @Override public void afterTextChanged(Editable editable) {
             }
         });
+
+        setOnClickListener(this);
     }
 
     /**
