@@ -1333,11 +1333,10 @@ public class CreditCardView extends LinearLayout {
     public void setCreditCardData(CreditCard data) {
         this.creditCard = data;
 
-        setCardDigits(data.getDigits());
-        setCardNumber(data.getCardNumber());
         setCardHolder(data.getCardHolder());
         setCVV(data.getCVV());
         setExpiry(data.getExpireDate());
+        setCardNumber(data.getCardNumber());
     }
 
     /**
