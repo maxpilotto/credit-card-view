@@ -7,7 +7,6 @@ import android.text.TextWatcher;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
-import android.widget.TextView;
 
 import com.maxpilotto.creditcardview.CreditCardView;
 
@@ -22,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         card = findViewById(R.id.card);
         card.setNumberVisibility(CreditCardView.NumberVisibility.HIDE);
-        card.setCVVVisibility(CreditCardView.CvvVisibility.HIDE);
+        card.setCVVVisibility(CreditCardView.CVVVisibility.HIDE);
         card.setFlipOnClick(false);
         card.setFlipOnCVVEdit(false);
         card.setFlipOnFrontDataEdit(false);
@@ -40,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
         ((Switch)findViewById(R.id.showCvv)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b){
-                    card.setCVVVisibility(CreditCardView.CvvVisibility.SHOW);
+                    card.setCVVVisibility(CreditCardView.CVVVisibility.SHOW);
                 }else {
-                    card.setCVVVisibility(CreditCardView.CvvVisibility.HIDE);
+                    card.setCVVVisibility(CreditCardView.CVVVisibility.HIDE);
                 }
             }
         });
@@ -73,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             @Override public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 try{
                     Integer size = Integer.parseInt(((EditText)findViewById(R.id.groupSize)).getText().toString());
-                    card.setCardNumberGroupSize(size);
+                    card.setNumberGroupSize(size);
                 }catch (Exception e){
 
                 }

@@ -66,7 +66,7 @@ public class CreditCardView extends LinearLayout {
     protected static final int DEFAULT_CARD_NUMBER_GROUP_SIZE = 4;
     protected static final int DEFAULT_MAGNETIC_STRIP_COLOR = android.R.color.black;
     protected static final int DEFAULT_ERROR_COLOR = android.R.color.holo_red_light;
-    protected static final CvvVisibility DEFAULT_CVV_VISIBILITY = CvvVisibility.SHOW;
+    protected static final CVVVisibility DEFAULT_CVV_VISIBILITY = CVVVisibility.SHOW;
     protected static final boolean DEFAULT_FLIP_ON_FRONT_DATA_EDIT = false;
     protected static final boolean DEFAULT_FLIP_ON_CVV_EDIT = false;
     protected static final boolean DEFAULT_ERRORS_ENABLED_VALUE = false;
@@ -115,18 +115,18 @@ public class CreditCardView extends LinearLayout {
         }
     }
 
-    public enum CvvVisibility {
+    public enum CVVVisibility {
         SHOW(0),
         HIDE(1);
 
         private int value;
 
-        CvvVisibility(int value) {
+        CVVVisibility(int value) {
             this.value = value;
         }
 
-        public static CvvVisibility fromValue(int value) {
-            for (CvvVisibility visibility : values()) {
+        public static CVVVisibility fromValue(int value) {
+            for (CVVVisibility visibility : values()) {
                 if (visibility.value == value) {
                     return visibility;
                 }
@@ -147,7 +147,7 @@ public class CreditCardView extends LinearLayout {
         }
 
         @Override public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            setCardHolder(charSequence.toString());
+            setHolder(charSequence.toString());
         }
 
         @Override public void afterTextChanged(Editable editable) {
@@ -180,7 +180,7 @@ public class CreditCardView extends LinearLayout {
         }
 
         @Override public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            setCardNumber(charSequence.toString());
+            setNumber(charSequence.toString());
         }
 
         @Override public void afterTextChanged(Editable editable) {
@@ -209,7 +209,7 @@ public class CreditCardView extends LinearLayout {
     private CreditCard creditCard;
     private CreditCardViewListener listener;
     private NumberVisibility numberVisibility = DEFAULT_NUMBER_VISIBILITY;
-    private CvvVisibility cvvVisibility = DEFAULT_CVV_VISIBILITY;
+    private CVVVisibility cvvVisibility = DEFAULT_CVV_VISIBILITY;
     private char hideChar = DEFAULT_CARD_NUMBER_HIDE_CHAR;
     private boolean flipOnClick = DEFAULT_FLIP_ON_CLICK_VALUE;
     private boolean flipped = DEFAULT_FLIPPED_VALUE;
@@ -283,27 +283,27 @@ public class CreditCardView extends LinearLayout {
         copy.setErrorsEnabled(card.errorsEnabled);
         copy.setFlipOnCVVEdit(card.flipOnCVVEdit);
         copy.setFlipOnFrontDataEdit(card.flipOnFrontDataEdit);
-        copy.setCardNumberGroupSize(card.cardNumberGroupSize);
+        copy.setNumberGroupSize(card.cardNumberGroupSize);
         copy.setHideChar(card.hideChar);
         copy.setCardDigits(card.getDigits());
-        copy.setCardNumberHint(card.cardNumber.getHint().toString().replace(" ",""));
-        copy.setCardHolderLabel(card.cardHolderLabel.getText().toString());
-        copy.setCardExpiryLabel(card.cardExpiryLabel.getText().toString());
+        copy.setNumberHint(card.cardNumber.getHint().toString().replace(" ",""));
+        copy.setHolderLabel(card.cardHolderLabel.getText().toString());
+        copy.setExpiryLabel(card.cardExpiryLabel.getText().toString());
         copy.setExpiryHint(card.expiry.getHint().toString().replace("/",""));
-        copy.setCardHolderHint(card.cardHolder.getHint().toString());
-        copy.setCvvHint(card.cvv.getHint().toString());
+        copy.setHolderHint(card.cardHolder.getHint().toString());
+        copy.setCVVHint(card.cvv.getHint().toString());
         copy.setFlipOnClick(card.flipOnClick);
-        copy.setCVVVisibility(card.getCvvVisibility());
-        copy.setCardNumberVisibility(card.getNumberVisibility());
-        copy.setCardNumberColor(new ColorDrawable(card.cardNumber.getCurrentTextColor()));
-        copy.setCardNumberHintColor(new ColorDrawable(card.cardNumber.getCurrentHintTextColor()));
+        copy.setCVVVisibility(card.getCVVVisibility());
+        copy.setNumberVisibility(card.getNumberVisibility());
+        copy.setNumberColor(new ColorDrawable(card.cardNumber.getCurrentTextColor()));
+        copy.setNumberHintColor(new ColorDrawable(card.cardNumber.getCurrentHintTextColor()));
         copy.setLabelsTextColor(new ColorDrawable(card.cardHolderLabel.getCurrentTextColor()));
-        copy.setCardHolderColor(new ColorDrawable(card.cardHolder.getCurrentTextColor()));
-        copy.setCardHolderHintColor(new ColorDrawable(card.cardHolder.getCurrentHintTextColor()));
+        copy.setHolderColor(new ColorDrawable(card.cardHolder.getCurrentTextColor()));
+        copy.setHolderHintColor(new ColorDrawable(card.cardHolder.getCurrentHintTextColor()));
         copy.setExpiryColor(new ColorDrawable(card.expiry.getCurrentTextColor()));
         copy.setExpiryHintColor(new ColorDrawable(card.expiry.getCurrentHintTextColor()));
-        copy.setCvvColor(new ColorDrawable(card.cvv.getCurrentTextColor()));
-        copy.setCvvHintColor(new ColorDrawable(card.cvv.getCurrentHintTextColor()));
+        copy.setCVVColor(new ColorDrawable(card.cvv.getCurrentTextColor()));
+        copy.setCVVHintColor(new ColorDrawable(card.cvv.getCurrentHintTextColor()));
         copy.setBackViewStripColor((ColorDrawable) card.magneticStrip.getBackground());
         copy.setErrorColor(new ColorDrawable(card.cardNumberError.getCurrentTextColor()));
         copy.flipWithoutAnimation(card.isFlipped(), false);
@@ -371,30 +371,30 @@ public class CreditCardView extends LinearLayout {
             setFlipOnCVVEdit(array.getBoolean(R.styleable.CreditCardView_flipOnCVVEdit, DEFAULT_FLIP_ON_CVV_EDIT));
             setFlipOnFrontDataEdit(array.getBoolean(R.styleable.CreditCardView_flipOnFrontDataEdit, DEFAULT_FLIP_ON_FRONT_DATA_EDIT));
             setCardDigits(array.getInt(R.styleable.CreditCardView_digits, DEFAULT_DIGITS));
-            setCardNumberGroupSize(array.getInt(R.styleable.CreditCardView_cardNumberGroupSize, DEFAULT_CARD_NUMBER_GROUP_SIZE));
+            setNumberGroupSize(array.getInt(R.styleable.CreditCardView_cardNumberGroupSize, DEFAULT_CARD_NUMBER_GROUP_SIZE));
             setHideChar(array.getString(R.styleable.CreditCardView_hideChar));
-            setCardNumber(array.getString(R.styleable.CreditCardView_number));
-            setCardHolder(array.getString(R.styleable.CreditCardView_cardHolder));
+            setNumber(array.getString(R.styleable.CreditCardView_number));
+            setHolder(array.getString(R.styleable.CreditCardView_cardHolder));
             setExpiry(array.getString(R.styleable.CreditCardView_expireDate));
             setCVV(array.getString(R.styleable.CreditCardView_cvv));
-            setCardNumberHint(array.getString(R.styleable.CreditCardView_numberHint));
-            setCardHolderLabel(array.getString(R.styleable.CreditCardView_cardHolderLabel));
-            setCardExpiryLabel(array.getString(R.styleable.CreditCardView_cardExpiryLabel));
+            setNumberHint(array.getString(R.styleable.CreditCardView_numberHint));
+            setHolderLabel(array.getString(R.styleable.CreditCardView_cardHolderLabel));
+            setExpiryLabel(array.getString(R.styleable.CreditCardView_cardExpiryLabel));
             setExpiryHint(array.getString(R.styleable.CreditCardView_expireDateHint));
-            setCardHolderHint(array.getString(R.styleable.CreditCardView_cardHolderHint));
-            setCvvHint(array.getString(R.styleable.CreditCardView_cvvHint));
+            setHolderHint(array.getString(R.styleable.CreditCardView_cardHolderHint));
+            setCVVHint(array.getString(R.styleable.CreditCardView_cvvHint));
             setFlipOnClick(array.getBoolean(R.styleable.CreditCardView_flipOnClick, DEFAULT_FLIP_ON_CLICK_VALUE));
-            setCVVVisibility(CvvVisibility.fromValue(array.getInt(R.styleable.CreditCardView_cvvVisibility, DEFAULT_CVV_VISIBILITY.value)));
-            setCardNumberVisibility(NumberVisibility.fromValue(array.getInt(R.styleable.CreditCardView_numberVisibility, DEFAULT_NUMBER_VISIBILITY.value)));
-            setCardNumberColor((ColorDrawable) getDrawableAttribute(array, R.styleable.CreditCardView_numberColor, DEFAULT_NUMBER_TEXT_COLOR));
-            setCardNumberHintColor((ColorDrawable) getDrawableAttribute(array, R.styleable.CreditCardView_numberHintColor, DEFAULT_NUMBER_HINT_COLOR));
+            setCVVVisibility(CVVVisibility.fromValue(array.getInt(R.styleable.CreditCardView_cvvVisibility, DEFAULT_CVV_VISIBILITY.value)));
+            setNumberVisibility(NumberVisibility.fromValue(array.getInt(R.styleable.CreditCardView_numberVisibility, DEFAULT_NUMBER_VISIBILITY.value)));
+            setNumberColor((ColorDrawable) getDrawableAttribute(array, R.styleable.CreditCardView_numberColor, DEFAULT_NUMBER_TEXT_COLOR));
+            setNumberHintColor((ColorDrawable) getDrawableAttribute(array, R.styleable.CreditCardView_numberHintColor, DEFAULT_NUMBER_HINT_COLOR));
             setLabelsTextColor((ColorDrawable) getDrawableAttribute(array, R.styleable.CreditCardView_labelsTextColor, DEFAULT_LABELS_TEXT_COLOR));
-            setCardHolderColor((ColorDrawable) getDrawableAttribute(array, R.styleable.CreditCardView_cardHolderColor, DEFAULT_CARD_HOLDER_COLOR));
-            setCardHolderHintColor((ColorDrawable) getDrawableAttribute(array, R.styleable.CreditCardView_cardHolderHintColor, DEFAULT_CARD_HOLDER_HINT_COLOR));
+            setHolderColor((ColorDrawable) getDrawableAttribute(array, R.styleable.CreditCardView_cardHolderColor, DEFAULT_CARD_HOLDER_COLOR));
+            setHolderHintColor((ColorDrawable) getDrawableAttribute(array, R.styleable.CreditCardView_cardHolderHintColor, DEFAULT_CARD_HOLDER_HINT_COLOR));
             setExpiryColor((ColorDrawable) getDrawableAttribute(array, R.styleable.CreditCardView_expireDateColor, DEFAULT_EXPIRY_COLOR));
             setExpiryHintColor((ColorDrawable) getDrawableAttribute(array, R.styleable.CreditCardView_expireDateHintColor, DEFAULT_EXPY_HINT_COLOR));
-            setCvvColor((ColorDrawable) getDrawableAttribute(array, R.styleable.CreditCardView_cvvColor, DEFAULT_CVV_COLOR));
-            setCvvHintColor((ColorDrawable) getDrawableAttribute(array, R.styleable.CreditCardView_cvvHintColor, DEFAULT_CVV_HINT_COLOR));
+            setCVVColor((ColorDrawable) getDrawableAttribute(array, R.styleable.CreditCardView_cvvColor, DEFAULT_CVV_COLOR));
+            setCVVHintColor((ColorDrawable) getDrawableAttribute(array, R.styleable.CreditCardView_cvvHintColor, DEFAULT_CVV_HINT_COLOR));
             setBackViewStripColor((ColorDrawable) getDrawableAttribute(array, R.styleable.CreditCardView_magneticStripColor, DEFAULT_MAGNETIC_STRIP_COLOR));
             setErrorColor((ColorDrawable) getDrawableAttribute(array, R.styleable.CreditCardView_errorColor, DEFAULT_ERROR_COLOR));
             flipWithoutAnimation(array.getBoolean(R.styleable.CreditCardView_flipped, DEFAULT_FLIPPED_VALUE), false);
@@ -421,30 +421,30 @@ public class CreditCardView extends LinearLayout {
             setFlipOnCVVEdit(DEFAULT_FLIP_ON_CVV_EDIT);
             setFlipOnFrontDataEdit(DEFAULT_FLIP_ON_FRONT_DATA_EDIT);
             setCardDigits(DEFAULT_DIGITS);
-            setCardNumberGroupSize(DEFAULT_CARD_NUMBER_GROUP_SIZE);
+            setNumberGroupSize(DEFAULT_CARD_NUMBER_GROUP_SIZE);
             setHideChar(DEFAULT_CARD_NUMBER_HIDE_CHAR);
-            setCardNumber("");
-            setCardHolder("");
+            setNumber("");
+            setHolder("");
             setExpiry("");
             setCVV("");
-            setCardNumberHint(DEFAULT_CARD_NUMBER_HINT);
-            setCardHolderLabel(DEFAULT_CARD_HOLDER_HINT);
-            setCardExpiryLabel(DEFAULT_CARD_EXPIRY_LABEL);
+            setNumberHint(DEFAULT_CARD_NUMBER_HINT);
+            setHolderLabel(DEFAULT_CARD_HOLDER_HINT);
+            setExpiryLabel(DEFAULT_CARD_EXPIRY_LABEL);
             setExpiryHint(DEFAULT_EXPIRY_HINT);
-            setCardHolderHint(DEFAULT_CARD_HOLDER_HINT);
-            setCvvHint("");
+            setHolderHint(DEFAULT_CARD_HOLDER_HINT);
+            setCVVHint("");
             setFlipOnClick(DEFAULT_FLIP_ON_CLICK_VALUE);
-            setCVVVisibility(CvvVisibility.fromValue(DEFAULT_CVV_VISIBILITY.value));
-            setCardNumberVisibility(NumberVisibility.fromValue(DEFAULT_NUMBER_VISIBILITY.value));
-            setCardNumberColor((ColorDrawable) getDrawableAttribute(DEFAULT_NUMBER_TEXT_COLOR));
-            setCardNumberHintColor((ColorDrawable) getDrawableAttribute(DEFAULT_NUMBER_HINT_COLOR));
+            setCVVVisibility(CVVVisibility.fromValue(DEFAULT_CVV_VISIBILITY.value));
+            setNumberVisibility(NumberVisibility.fromValue(DEFAULT_NUMBER_VISIBILITY.value));
+            setNumberColor((ColorDrawable) getDrawableAttribute(DEFAULT_NUMBER_TEXT_COLOR));
+            setNumberHintColor((ColorDrawable) getDrawableAttribute(DEFAULT_NUMBER_HINT_COLOR));
             setLabelsTextColor((ColorDrawable) getDrawableAttribute(DEFAULT_LABELS_TEXT_COLOR));
-            setCardHolderColor((ColorDrawable) getDrawableAttribute(DEFAULT_CARD_HOLDER_COLOR));
-            setCardHolderHintColor((ColorDrawable) getDrawableAttribute(DEFAULT_CARD_HOLDER_HINT_COLOR));
+            setHolderColor((ColorDrawable) getDrawableAttribute(DEFAULT_CARD_HOLDER_COLOR));
+            setHolderHintColor((ColorDrawable) getDrawableAttribute(DEFAULT_CARD_HOLDER_HINT_COLOR));
             setExpiryColor((ColorDrawable) getDrawableAttribute(DEFAULT_EXPIRY_COLOR));
             setExpiryHintColor((ColorDrawable) getDrawableAttribute(DEFAULT_EXPY_HINT_COLOR));
-            setCvvColor((ColorDrawable) getDrawableAttribute(DEFAULT_CVV_COLOR));
-            setCvvHintColor((ColorDrawable) getDrawableAttribute(DEFAULT_CVV_HINT_COLOR));
+            setCVVColor((ColorDrawable) getDrawableAttribute(DEFAULT_CVV_COLOR));
+            setCVVHintColor((ColorDrawable) getDrawableAttribute(DEFAULT_CVV_HINT_COLOR));
             setBackViewStripColor((ColorDrawable) getDrawableAttribute(DEFAULT_MAGNETIC_STRIP_COLOR));
             setErrorColor((ColorDrawable) getDrawableAttribute(DEFAULT_ERROR_COLOR));
             flipWithoutAnimation(DEFAULT_FLIPPED_VALUE, false);
@@ -554,9 +554,9 @@ public class CreditCardView extends LinearLayout {
     /**
      * Sets the CVV visibility
      *
-     * @param cvvVisibility Must be one of {@link CvvVisibility}
+     * @param cvvVisibility Must be one of {@link CVVVisibility}
      */
-    public void setCVVVisibility(CvvVisibility cvvVisibility) {
+    public void setCVVVisibility(CVVVisibility cvvVisibility) {
         this.cvvVisibility = cvvVisibility;
         cvv.setText(formatCVV(creditCard.getCVV()));
     }
@@ -596,7 +596,7 @@ public class CreditCardView extends LinearLayout {
      *
      * @param drawable color
      */
-    public void setCvvHintColor(ColorDrawable drawable) {
+    public void setCVVHintColor(ColorDrawable drawable) {
         cvv.setHintTextColor(drawable.getColor());
     }
 
@@ -605,7 +605,7 @@ public class CreditCardView extends LinearLayout {
      *
      * @param string Text
      */
-    public void setCvvHint(String string) {
+    public void setCVVHint(String string) {
         cvv.setHint(string);
     }
 
@@ -614,7 +614,7 @@ public class CreditCardView extends LinearLayout {
      *
      * @param drawable color
      */
-    public void setCvvColor(ColorDrawable drawable) {
+    public void setCVVColor(ColorDrawable drawable) {
         cvv.setTextColor(drawable.getColor());
     }
 
@@ -629,7 +629,7 @@ public class CreditCardView extends LinearLayout {
         } else {
             hideChar = string.charAt(0);
         }
-        setCardNumber(creditCard.getCardNumber());
+        setNumber(creditCard.getCardNumber());
         setCVV(creditCard.getCVV());
     }
 
@@ -640,7 +640,7 @@ public class CreditCardView extends LinearLayout {
      */
     public void setCardDigits(int digits) {
         creditCard.setDigits(digits);
-        setCardNumber(creditCard.getCardNumber());
+        setNumber(creditCard.getCardNumber());
     }
 
     /**
@@ -689,7 +689,7 @@ public class CreditCardView extends LinearLayout {
      *
      * @param drawable color
      */
-    public void setCardHolderHintColor(ColorDrawable drawable) {
+    public void setHolderHintColor(ColorDrawable drawable) {
         cardHolder.setHintTextColor(drawable.getColor());
     }
 
@@ -698,7 +698,7 @@ public class CreditCardView extends LinearLayout {
      *
      * @param string Text
      */
-    public void setCardHolderHint(String string) {
+    public void setHolderHint(String string) {
         if (string == null) {
             cardHolder.setHint(DEFAULT_CARD_HOLDER_HINT);
         } else {
@@ -711,7 +711,7 @@ public class CreditCardView extends LinearLayout {
      *
      * @param drawable color
      */
-    public void setCardHolderColor(ColorDrawable drawable) {
+    public void setHolderColor(ColorDrawable drawable) {
         cardHolder.setTextColor(drawable.getColor());
     }
 
@@ -720,7 +720,7 @@ public class CreditCardView extends LinearLayout {
      *
      * @param drawable color
      */
-    public void setCardNumberHintColor(ColorDrawable drawable) {
+    public void setNumberHintColor(ColorDrawable drawable) {
         cardNumber.setHintTextColor(drawable.getColor());
     }
 
@@ -729,11 +729,11 @@ public class CreditCardView extends LinearLayout {
      *
      * @param string Text
      */
-    public void setCardNumberHint(String string) {
+    public void setNumberHint(String string) {
         if (string == null) {
             cardNumber.setHint(DEFAULT_CARD_NUMBER_HINT);
         } else {
-//            cardNumber.setHint(formatCardNumber(string));
+//            cardNumber.setHint(formatNumber(string));
             cardNumber.setHint(string);
         }
     }
@@ -801,9 +801,9 @@ public class CreditCardView extends LinearLayout {
      *
      * @param visibility Must be one of {@link NumberVisibility}
      */
-    public void setCardNumberVisibility(NumberVisibility visibility) {
+    public void setNumberVisibility(NumberVisibility visibility) {
         this.numberVisibility = visibility;
-        cardNumber.setText(formatCardNumber(creditCard.getCardNumber()));
+        cardNumber.setText(formatNumber(creditCard.getCardNumber()));
     }
 
     /**
@@ -811,7 +811,7 @@ public class CreditCardView extends LinearLayout {
      *
      * @param drawable color
      */
-    public void setCardNumberColor(ColorDrawable drawable) {
+    public void setNumberColor(ColorDrawable drawable) {
         cardNumber.setTextColor(drawable.getColor());
     }
 
@@ -830,7 +830,7 @@ public class CreditCardView extends LinearLayout {
      *
      * @param text Text
      */
-    public void setCardHolderLabel(String text) {
+    public void setHolderLabel(String text) {
         if (text == null) {
             cardHolderLabel.setText(DEFAULT_CARD_HOLDER_LABEL);
         } else {
@@ -843,7 +843,7 @@ public class CreditCardView extends LinearLayout {
      *
      * @param text Text
      */
-    public void setCardExpiryLabel(String text) {
+    public void setExpiryLabel(String text) {
         if (text == null) {
             cardExpiryLabel.setText(DEFAULT_CARD_EXPIRY_LABEL);
         } else {
@@ -923,7 +923,7 @@ public class CreditCardView extends LinearLayout {
      * @param string Original string
      * @return Formatted string
      */
-    protected String formatCardNumber(String string) {
+    protected String formatNumber(String string) {
         if (StringUtils.isEmpty(string)) {
             return "";
         }
@@ -1016,7 +1016,7 @@ public class CreditCardView extends LinearLayout {
             cvv.delete(3, cvv.length());
         }
 
-        if (cvvVisibility == CvvVisibility.SHOW) {
+        if (cvvVisibility == CVVVisibility.SHOW) {
             if (cvv.length() < 3) {
                 int diff = 3 - cvv.length();
 
@@ -1024,7 +1024,7 @@ public class CreditCardView extends LinearLayout {
                     cvv.append(hideChar);
                 }
             }
-        } else if (cvvVisibility == CvvVisibility.HIDE) {
+        } else if (cvvVisibility == CVVVisibility.HIDE) {
             for (int i = 0; i < cvv.length(); i++) {
                 cvv.setCharAt(i, hideChar);
             }
@@ -1045,9 +1045,9 @@ public class CreditCardView extends LinearLayout {
     /**
      * Returns the CVV visibility
      *
-     * @return One of {@link CvvVisibility}
+     * @return One of {@link CVVVisibility}
      */
-    public CvvVisibility getCvvVisibility() {
+    public CVVVisibility getCVVVisibility() {
         return cvvVisibility;
     }
 
@@ -1074,7 +1074,7 @@ public class CreditCardView extends LinearLayout {
      *
      * @return Group size
      */
-    public int getCardNumberGroupSize() {
+    public int getNumberGroupSize() {
         return cardNumberGroupSize;
     }
 
@@ -1083,9 +1083,9 @@ public class CreditCardView extends LinearLayout {
      *
      * @param groupSize Group size, it should be greater than 0 and a divisor of the card number's length
      */
-    public void setCardNumberGroupSize(int groupSize) {
+    public void setNumberGroupSize(int groupSize) {
         this.cardNumberGroupSize = groupSize;
-        setCardNumber(creditCard.getCardNumber());
+        setNumber(creditCard.getCardNumber());
     }
 
     /**
@@ -1101,11 +1101,11 @@ public class CreditCardView extends LinearLayout {
 
     /**
      * Sets the card number error, can be cleared using {@link CreditCardView#hideAllErrors()},
-     * setCardNumberError(null) will only display and error with no text
+     * setNumberError(null) will only display and error with no text
      *
      * @param error Error text
      */
-    public void setCardNumberError(String error) {
+    public void setNumberError(String error) {
         cardNumberError.setVisibility(View.VISIBLE);
         cardNumberError.setText(error);
     }
@@ -1123,11 +1123,11 @@ public class CreditCardView extends LinearLayout {
 
     /**
      * Sets the card holder error, can be cleared using {@link CreditCardView#hideAllErrors()},
-     * setCardHolderError(null) will only display and error with no text
+     * setHolderError(null) will only display and error with no text
      *
      * @param error Error text
      */
-    public void setCardHolderError(String error) {
+    public void setHolderError(String error) {
         cardHolderError.setVisibility(View.VISIBLE);
         cardHolderError.setText(error);
     }
@@ -1188,7 +1188,7 @@ public class CreditCardView extends LinearLayout {
      *
      * @return Card holder
      */
-    public String getCardHolder() {
+    public String getHolder() {
         return creditCard.getCardHolder();
     }
 
@@ -1197,7 +1197,7 @@ public class CreditCardView extends LinearLayout {
      *
      * @param string Card holder
      */
-    public void setCardHolder(String string) {
+    public void setHolder(String string) {
         creditCard.setCardHolder(string);
         cardHolder.setText(string);
     }
@@ -1207,7 +1207,7 @@ public class CreditCardView extends LinearLayout {
      *
      * @return Card number
      */
-    public String getCardNumber() {
+    public String getNumber() {
         return creditCard.getCardNumber();
     }
 
@@ -1216,9 +1216,9 @@ public class CreditCardView extends LinearLayout {
      *
      * @param number Card number
      */
-    public void setCardNumber(String number) {
+    public void setNumber(String number) {
         creditCard.setCardNumber(number);
-        cardNumber.setText(formatCardNumber(number));
+        cardNumber.setText(formatNumber(number));
 
         paintCardBackground(creditCard.getCardType());
     }
@@ -1323,10 +1323,10 @@ public class CreditCardView extends LinearLayout {
     public void setCreditCardData(CreditCard data) {
         this.creditCard = data;
 
-        setCardHolder(data.getCardHolder());
+        setHolder(data.getCardHolder());
         setCVV(data.getCVV());
         setExpiry(data.getExpireDate());
-        setCardNumber(data.getCardNumber());
+        setNumber(data.getCardNumber());
     }
 
     /**
