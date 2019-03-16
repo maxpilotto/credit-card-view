@@ -1043,16 +1043,6 @@ public class CreditCardView extends LinearLayout {
     }
 
     /**
-     * Sets the numberVisibility
-     *
-     * @param numberVisibility Must be one of {@link NumberVisibility}
-     */
-    public void setNumberVisibility(NumberVisibility numberVisibility) {
-        this.numberVisibility = numberVisibility;
-        cardNumber.setText(formatCardNumber(creditCard.getCardNumber()));
-    }
-
-    /**
      * Returns the CVV visibility
      *
      * @return One of {@link CvvVisibility}
