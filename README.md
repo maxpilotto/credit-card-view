@@ -166,7 +166,7 @@ cvvHintColor|color/reference|CVV hint text color
 
 Note: Raw colors are not supported, use references instead (E.g. "R.color.red" instead of "#ff0000")
 
-JavaDoc is available [here](http://toaststudio.altervista.org/docs/credit-card-view/)
+JavaDoc is available [here](maxpilotto.com/docs/credit-card-view/index.html)
 
 # License
 This is made available under the terms of the GPLv3. <br/>
