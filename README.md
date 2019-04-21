@@ -110,7 +110,7 @@ CreditCardView copiedCard = CreditCardView.copyFrom(((CreditCardView)findViewByI
 card.setCardNumber("341635298762981");
 ```
 
-# Check out the (Demo)[https://github.com/maxpilotto/credit-card-view/releases]
+# Check out the [Demo](https://github.com/maxpilotto/credit-card-view/releases)
 
 # Documentation
 
