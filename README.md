@@ -5,6 +5,11 @@
 
 A fully customizable Android view that can display credit card's informations
 
+![Screenshot1](https://raw.github.com/maxpilotto/credit-card-view/master/pics/s1.jpg) 
+![Screenshot2](https://raw.github.com/maxpilotto/credit-card-view/master/pics/s2.jpg)  
+![Screenshot3](https://raw.github.com/maxpilotto/credit-card-view/master/pics/s3.jpg)
+![Screenshot4](https://raw.github.com/maxpilotto/credit-card-view/master/pics/s4.jpg)
+
 # How to add it to your project
 * Download the lastest release, you can find it [here](https://github.com/maxpilotto/credit-card-view/releases) 
 * Open Android Studio and go to File > New > New module > Import .JAR/.AAR Package (Select the file downloaded previously)
