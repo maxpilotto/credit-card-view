@@ -75,7 +75,7 @@
         </attr>
 
         <!-- Card number value, the number shouldn't have spaces -->
-        <attr name="number" format="string"/>
+        <attr name="cardNumber" format="string"/>
         <!-- Expiry value, the string shouldn't have spaces,dashes or slashes since the slash is automatically added -->
         <attr name="expireDate" format="string"/>
         <!-- Card holder value, it can be anything -->
