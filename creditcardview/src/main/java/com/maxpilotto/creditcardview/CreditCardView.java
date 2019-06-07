@@ -180,7 +180,7 @@ public class CreditCardView extends LinearLayout {
         }
 
         @Override public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            setNumber(charSequence.toString());
+            setCardNumber(charSequence.toString());
         }
 
         @Override public void afterTextChanged(Editable editable) {
@@ -373,7 +373,7 @@ public class CreditCardView extends LinearLayout {
             setCardDigits(array.getInt(R.styleable.CreditCardView_digits, DEFAULT_DIGITS));
             setNumberGroupSize(array.getInt(R.styleable.CreditCardView_cardNumberGroupSize, DEFAULT_CARD_NUMBER_GROUP_SIZE));
             setHideChar(array.getString(R.styleable.CreditCardView_hideChar));
-            setNumber(array.getString(R.styleable.CreditCardView_number));
+            setCardNumber(array.getString(R.styleable.CreditCardView_cardNumber));
             setHolder(array.getString(R.styleable.CreditCardView_cardHolder));
             setExpiry(array.getString(R.styleable.CreditCardView_expireDate));
             setCVV(array.getString(R.styleable.CreditCardView_cvv));
@@ -423,7 +423,7 @@ public class CreditCardView extends LinearLayout {
             setCardDigits(DEFAULT_DIGITS);
             setNumberGroupSize(DEFAULT_CARD_NUMBER_GROUP_SIZE);
             setHideChar(DEFAULT_CARD_NUMBER_HIDE_CHAR);
-            setNumber("");
+            setCardNumber("");
             setHolder("");
             setExpiry("");
             setCVV("");
@@ -629,7 +629,7 @@ public class CreditCardView extends LinearLayout {
         } else {
             hideChar = string.charAt(0);
         }
-        setNumber(creditCard.getCardNumber());
+        setCardNumber(creditCard.getCardNumber());
         setCVV(creditCard.getCVV());
     }
 
@@ -640,7 +640,7 @@ public class CreditCardView extends LinearLayout {
      */
     public void setCardDigits(int digits) {
         creditCard.setDigits(digits);
-        setNumber(creditCard.getCardNumber());
+        setCardNumber(creditCard.getCardNumber());
     }
 
     /**
@@ -1085,7 +1085,7 @@ public class CreditCardView extends LinearLayout {
      */
     public void setNumberGroupSize(int groupSize) {
         this.cardNumberGroupSize = groupSize;
-        setNumber(creditCard.getCardNumber());
+        setCardNumber(creditCard.getCardNumber());
     }
 
     /**
@@ -1216,7 +1216,7 @@ public class CreditCardView extends LinearLayout {
      *
      * @param number Card number
      */
-    public void setNumber(String number) {
+    public void setCardNumber(String number) {
         creditCard.setCardNumber(number);
         cardNumber.setText(formatNumber(number));
 
@@ -1326,7 +1326,7 @@ public class CreditCardView extends LinearLayout {
         setHolder(data.getCardHolder());
         setCVV(data.getCVV());
         setExpiry(data.getExpireDate());
-        setNumber(data.getCardNumber());
+        setCardNumber(data.getCardNumber());
     }
 
     /**
