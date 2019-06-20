@@ -13,7 +13,7 @@ A fully customizable Android view that can display credit card's informations
 # Getting started
 ```gradle 
 dependencies {
-	implementation 'com.maxpilotto:credit-card-view:5.0'
+	implementation 'com.maxpilotto:credit-card-view:6.0'
 }
 ```
 
