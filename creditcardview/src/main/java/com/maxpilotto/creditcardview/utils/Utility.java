@@ -1,7 +1,7 @@
 package com.maxpilotto.creditcardview.utils;
 
 import android.graphics.drawable.Drawable;
-import android.support.v4.graphics.drawable.DrawableCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
 
 /**
  * Project: credit-card-view
