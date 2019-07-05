@@ -1,8 +1,5 @@
 # credit-card-view
 
-[![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)
-[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-
 A fully customizable Android view that can display credit card's informations
 
 <img src="https://raw.github.com/maxpilotto/credit-card-view/master/pics/s1.jpg" width=250>  
