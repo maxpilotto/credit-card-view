@@ -7,7 +7,7 @@ ext {
     publishedGroupId = 'com.maxpilotto'
     libraryName = 'credit-card-view'
     libraryDescription = 'A fully customizable Android view that can display credit card\'s informations'
-    artifact = 'creditcardview'
+    artifact = 'credit-card-view'
 
     siteUrl = 'https://github.com/maxpilotto/credit-card-view'
     gitUrl = 'https://github.com/maxpilotto/credit-card-view.git'
