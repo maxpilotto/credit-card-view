@@ -1,19 +1,18 @@
-# credit-card-view
+# CreditCardView
 
 A fully customizable Android view that can display credit card's informations
 
-<img src="https://raw.github.com/maxpilotto/credit-card-view/master/pics/s1.jpg" width=250>  
-<img src="https://raw.github.com/maxpilotto/credit-card-view/master/pics/s2.jpg" width=250>  
-<img src="https://raw.github.com/maxpilotto/credit-card-view/master/pics/s3.jpg" width=250>  
-<img src="https://raw.github.com/maxpilotto/credit-card-view/master/pics/s4.jpg" width=250>  
+<img src="https://raw.github.com/maxpilotto/credit-card-view/master/.github/pics/s1.jpg" width=250>  
+<img src="https://raw.github.com/maxpilotto/credit-card-view/master/.github/pics/s2.jpg" width=250>  
+<img src="https://raw.github.com/maxpilotto/credit-card-view/master/.github/pics/s3.jpg" width=250>  
+<img src="https://raw.github.com/maxpilotto/credit-card-view/master/.github/pics/s4.jpg" width=250>  
 
 # Getting started
 ```gradle 
 dependencies {
-	implementation 'com.maxpilotto:creditcardview:6.0.0'
+	implementation 'com.maxpilotto:credit-card-view:6.0.0'
 }
 ```
-
 
 # Usage
 ### XML
@@ -167,16 +166,18 @@ Note: Raw colors are not supported, use references instead (E.g. "R.color.red" i
 JavaDoc is available [here](maxpilotto.com/docs/credit-card-view/index.html)
 
 # License
- Copyright 2018 Max Pilotto
+```
+Copyright 2018 Max Pilotto
 
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+        http://www.apache.org/licenses/LICENSE-2.0
 
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```

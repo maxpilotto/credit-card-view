@@ -1,1 +1,1 @@
-include ':creditcardview', ':demo'
+include ':credit-card-view', ':demo'

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/credit-card-view.iml" filepath="$PROJECT_DIR$/credit-card-view.iml" />
-      <module fileurl="file://$PROJECT_DIR$/creditcardview/creditcardview.iml" filepath="$PROJECT_DIR$/creditcardview/creditcardview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CreditCardView.iml" filepath="$PROJECT_DIR$/CreditCardView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/credit-card-view/credit-card-view.iml" filepath="$PROJECT_DIR$/credit-card-view/credit-card-view.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
     </modules>
   </component>
