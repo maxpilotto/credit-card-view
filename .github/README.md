@@ -8,9 +8,17 @@ A fully customizable Android view that can display credit card's informations
 <img src="https://raw.github.com/maxpilotto/credit-card-view/master/.github/pics/s4.jpg" width=250>  
 
 # Getting started
+In your project's `build.gradle`
+```gradle
+repositories {
+	maven { url "https://jitpack.io" }
+}
+```
+
+In your modules's `build.gradle`
 ```gradle 
 dependencies {
-	implementation 'com.maxpilotto:credit-card-view:6.0.0'
+    implementation 'com.github.maxpilotto:credit-card-view:6.0'
 }
 ```
 
