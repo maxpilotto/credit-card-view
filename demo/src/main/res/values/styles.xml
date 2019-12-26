@@ -1,11 +1,29 @@
 <resources>
 
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Generic">
+        <item name="frontBackground">#008577</item>
+        <item name="backBackground">#008577</item>
+    </style>
+
+    <style name="Visa">
+        <item name="frontBackground">#00ff00</item>
+        <item name="backBackground">#ffff00</item>
+    </style>
+
+    <style name="Amex">
+        <item name="frontBackground">#00ff00</item>
+        <item name="backBackground">#00FF00</item>
+    </style>
+
+    <style name="Maestro">
+        <item name="frontBackground">#0000ff</item>
+        <item name="textColor">#ffff00</item>
     </style>
 
 </resources>

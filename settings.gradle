@@ -1,1 +1,2 @@
-include ':credit-card-view', ':demo'
+include ':demo', ':credit-card-view'
+rootProject.name='CreditCardView'

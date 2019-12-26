@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="genericCardBackground">#303F9F</color>
-    <color name="visaCardBackground">#1976D2</color>
-    <color name="mastercardCardBackground">#757575</color>
-    <color name="americanExpressCardBackground">#4CAF50</color>
-    <color name="dinersClubCardBackground">#795548</color>
-    <color name="discoverCardBackground">#D32F2F</color>
-    <color name="jcbCardBackground">#FBC02D</color>
-    <color name="chinaUnionpayCardBackground">#00BCD4</color>
+    <color name="backgroundMastercard">#808088</color>
+    <color name="backgroundMaestro">#283593</color>
+    <color name="backgroundAmex">#4CAF50</color>
+    <color name="backgroundDiners">#795548</color>
+    <color name="backgroundDiscover">#D32F2F</color>
+    <color name="backgroundJCB">#FBC02D</color>
+    <color name="backgroundUnionpay">#00BCD4</color>
+    <color name="backgroundGeneric">#1976D2</color>
+    <color name="backgroundVisa">#FBC02D</color>
 </resources>
