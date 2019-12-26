@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="DefaultAmex">
+        <item name="frontBackground">@drawable/background_amex</item>
+        <item name="backBackground">@drawable/background_amex</item>
+        <item name="backLogo">@drawable/logo_amex</item>
+        <item name="frontLogo">@drawable/logo_amex</item>
+    </style>
+
+    <style name="DefaultDiners">
+        <item name="frontBackground">@drawable/background_diners</item>
+        <item name="backBackground">@drawable/background_diners</item>
+        <item name="backLogo">@drawable/logo_diners</item>
+        <item name="frontLogo">@drawable/logo_diners</item>
+    </style>
+
+    <style name="DefaultDiscover">
+        <item name="frontBackground">@drawable/background_discover</item>
+        <item name="backBackground">@drawable/background_discover</item>
+        <item name="backLogo">@drawable/logo_discover</item>
+        <item name="frontLogo">@drawable/logo_discover</item>
+    </style>
+
+    <style name="DefaultGeneric">
+        <item name="frontBackground">@drawable/background_generic</item>
+        <item name="backBackground">@drawable/background_generic</item>
+        <item name="backLogo">@drawable/logo_generic</item>
+        <item name="frontLogo">@drawable/logo_generic</item>
+    </style>
+
+    <style name="DefaultJcb">
+        <item name="frontBackground">@drawable/background_jcb</item>
+        <item name="backBackground">@drawable/background_jcb</item>
+        <item name="backLogo">@drawable/logo_jcb</item>
+        <item name="frontLogo">@drawable/logo_jcb</item>
+    </style>
+
+    <style name="DefaultMaestro">
+        <item name="frontBackground">@drawable/background_maestro</item>
+        <item name="backBackground">@drawable/background_maestro</item>
+        <item name="backLogo">@drawable/logo_maestro</item>
+        <item name="frontLogo">@drawable/logo_maestro</item>
+    </style>
+
+    <style name="DefaultMastercard">
+        <item name="frontBackground">@drawable/background_mastercard</item>
+        <item name="backBackground">@drawable/background_mastercard</item>
+        <item name="backLogo">@drawable/logo_mastercard</item>
+        <item name="frontLogo">@drawable/logo_mastercard</item>
+    </style>
+
+    <style name="DefaultUnionpay">
+        <item name="frontBackground">@drawable/background_unionpay</item>
+        <item name="backBackground">@drawable/background_unionpay</item>
+        <item name="backLogo">@drawable/logo_unionpay</item>
+        <item name="frontLogo">@drawable/logo_unionpay</item>
+    </style>
+
+    <style name="DefaultVisa">
+        <item name="frontBackground">@drawable/background_visa</item>
+        <item name="backBackground">@drawable/background_visa</item>
+        <item name="backLogo">@drawable/logo_visa</item>
+        <item name="frontLogo">@drawable/logo_visa</item>
+    </style>
+</resources>

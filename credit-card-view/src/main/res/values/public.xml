@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public name="DefaultAmex" type="style" />
+    <public name="DefaultDiners" type="style" />
+    <public name="DefaultDiscover" type="style" />
+    <public name="DefaultGeneric" type="style" />
+    <public name="DefaultJcb" type="style" />
+    <public name="DefaultMaestro" type="style" />
+    <public name="DefaultMastercard" type="style" />
+    <public name="DefaultUnionpay" type="style" />
+    <public name="DefaultVisa" type="style" />
+</resources>

@@ -1,113 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="CreditCardView">
-        <!-- Card background for when the number is not known -->
-        <attr name="genericCardBackground" format="color|reference"/>
-        <!-- Card background for when the number belongs to Visa -->
-        <attr name="visaCardBackground" format="color|reference"/>
-        <!-- Card background for when the number belongs to Mastercard -->
-        <attr name="mastercardCardBackground" format="color|reference"/>
-        <!-- Card background for when the number belongs to American Express -->
-        <attr name="americanExpressCardBackground" format="color|reference"/>
-        <!-- Card background for when the number belongs to Diners Club -->
-        <attr name="dinersClubCardBackground" format="color|reference"/>
-        <!-- Card background for when the number belongs to Discover -->
-        <attr name="discoverCardBackground" format="color|reference"/>
-        <!-- Card background for when the number belongs to JCB -->
-        <attr name="jcbCardBackground" format="color|reference"/>
-        <!-- Card background for when the number belongs to China UnionPay -->
-        <attr name="chinaUnionpayCardBackground" format="color|reference"/>
-        <!-- Text color of the labels -->
-        <attr name="labelsTextColor" format="color|reference"/>
-        <!-- Text value of the card holder's label -->
-        <attr name="cardHolderLabel" format="string"/>
-        <!-- Text value of the expiry's label -->
-        <attr name="cardExpiryLabel" format="string"/>
-        <!-- Card logo for when the number is not known -->
-        <attr name="genericCardLogo" format="reference"/>
-        <!-- Card logo for when the number belongs to Visa -->
-        <attr name="visaCardLogo" format="reference"/>
-        <!-- Card logo for when the number belongs to Mastercard -->
-        <attr name="mastercardCardLogo" format="reference"/>
-        <!-- Card logo for when the number belongs to American Express -->
-        <attr name="americanExpressCardLogo" format="reference"/>
-        <!-- Card logo for when the number belongs to Diners Club -->
-        <attr name="dinersClubCardLogo" format="reference"/>
-        <!-- Card logo for when the number belongs to Discover -->
-        <attr name="discoverCardLogo" format="reference"/>
-        <!-- Card logo for when the number belongs to JCB -->
-        <attr name="jcbCardLogo" format="reference"/>
-        <!-- Card logo for when the number belongs to China UnionPay -->
-        <attr name="chinaUnionpayCardLogo" format="reference"/>
-        <!-- Number of characters to which the card number is divided, spaces will be added between the character groups
-            E.g. groupSize = 2, number = "123456", result = "12 34 56" -->
-        <attr name="cardNumberGroupSize" format="integer"/>
-        <!-- Back view magnetic strip color -->
-        <attr name="magneticStripColor" format="color|reference"/>
-        <!-- Text color for all the errors TextViews -->
-        <attr name="errorColor" format="reference|color"/>
-        <!-- Flip the card when the CVV is being edited -->
-        <attr name="flipOnCVVEdit" format="boolean"/>
-        <!-- Flip the card when any of the front data is being edited -->
-        <attr name="flipOnFrontDataEdit" format="boolean"/>
-        <!-- Allows errors report, you need to setup a listener if you want to be able to see errors
-             Disabled by default -->
-        <attr name="errorsEnabled" format="boolean"/>
-        <!-- Visibility level of the CVV -->
-        <attr name="cvvVisibility" format="enum">
-            <enum name="show" value="0"/>
-            <enum name="hide" value="1"/>
-        </attr>
-        <!-- Length of the card number -->
-        <attr name="digits" format="integer"/>
+        <!-- Number on the card's front -->
+        <attr name="number" format="string" />
+
+        <!-- Holder name on the card's front -->
+        <attr name="holder" format="string" />
+
+        <!-- Expiration date on the card's back -->
+        <attr name="expiry" format="string" />
+
+        <!-- CVV number, located on the back of the card -->
+        <attr name="cvv" format="string" />
+
+        <!-- Format used to display the credit card's number,
+             take a look at the NumberFormat class for more info
+        -->
+        <attr name="numberFormat" format="string" />
+
+        <!-- XML file containing the fillers used for the credit card's number,
+             take a look at the Filler class for more info on how to use them and how to write the
+             XML file
+         -->
+        <attr name="numberFillers" format="reference" />
+
+        <!-- XML file containing the fillers used for the credit card's cvv,
+             take a look at the Filler class for more info on how to use them and how to write the
+             XML file
+        -->
+        <attr name="cvvFillers" format="reference" />
+
+        <!-- Color of the cvv's text -->
+        <attr name="cvvTextColor" format="color" />
+
+        <!-- Hint of the number's TextView -->
+        <attr name="numberHint" format="string" />
+
+        <!-- Text of the error below the number's view -->
+        <attr name="numberError" format="string" />
+
+        <!-- Hint of the holder's TextView -->
+        <attr name="holderHint" format="string" />
+
+        <!-- Text of the label above the holder's view -->
+        <attr name="holderLabel" format="string" />
+
+        <!-- Text of the error below the holder's view -->
+        <attr name="holderError" format="string" />
+
+        <!-- If true this will automatically add a "/" after the second digit of the expiry, enabled by default -->
+        <attr name="autoFormatExpiry" format="boolean" />
+
+        <!-- Hint of the expiry's TextView -->
+        <attr name="expiryHint" format="string" />
+
+        <!-- Text of the label above the expiry's view -->
+        <attr name="expiryLabel" format="string" />
+
+        <!-- Text of the error below the expiry's view -->
+        <attr name="expiryError" format="string" />
+
+        <!-- Hint of the cvv's TextView -->
+        <attr name="cvvHint" format="string" />
+
+        <!-- Text of the error below the cvv's view -->
+        <attr name="cvvError" format="string" />
+
+        <!-- Size of the cvv's text, this will override the textSize only for the cvv -->
+        <attr name="cvvSize" format="dimension" />
+
         <!-- Flipped value, False means that the front side is showing, True means that the back side is showing -->
-        <attr name="flipped" format="boolean"/>
-        <!-- Character that replaces the card number's characters when they are hidden -->
-        <attr name="hideChar" format="string"/>
-        <!-- Allows the card to flip when it's pressed, True to enable, False otherwise
-             By default it's disabled -->
-        <attr name="flipOnClick" format="boolean"/>
-        <!-- Visibility level of the card number -->
-        <attr name="numberVisibility" format="enum">
-            <enum name="show" value="0"/>
-            <enum name="showLastFour" value="1"/>
-            <enum name="hide" value="2"/>
-        </attr>
+        <attr name="flipped" format="boolean" />
 
-        <!-- Card number value, the number shouldn't have spaces -->
-        <attr name="cardNumber" format="string"/>
-        <!-- Expiry value, the string shouldn't have spaces,dashes or slashes since the slash is automatically added -->
-        <attr name="expireDate" format="string"/>
-        <!-- Card holder value, it can be anything -->
-        <attr name="cardHolder" format="string"/>
-        <!-- CVV value, max length 3 -->
-        <attr name="cvv" format="string"/>
+        <!-- Flips the card when it's clicked, disabled by default -->
+        <attr name="flipOnClick" format="boolean" />
 
-        <!-- Card number text color -->
-        <attr name="numberColor" format="color|reference"/>
-        <!-- Card holder text color -->
-        <attr name="cardHolderColor" format="color|reference"/>
-        <!-- Expiry text color -->
-        <attr name="expireDateColor" format="color|reference"/>
-        <!-- CVV text color -->
-        <attr name="cvvColor" format="color|reference"/>
+        <!-- Flips the card when the fields on the card are being edited, disabled by default -->
+        <attr name="flipOnEdit" format="boolean" />
 
-        <!-- Card number hint text value -->
-        <attr name="numberHint" format="string"/>
-        <!-- Card holder hint text value -->
-        <attr name="cardHolderHint" format="string"/>
-        <!-- Expiry hint text value -->
-        <attr name="expireDateHint" format="string"/>
-        <!-- CVV hint text value -->
-        <attr name="cvvHint" format="string"/>
+        <!-- Text color for all texts that are not labels or errors -->
+        <attr name="textColor" />
 
-        <!-- Card number hint text color -->
-        <attr name="numberHintColor" format="color|reference"/>
-        <!-- Card holder hint text color -->
-        <attr name="cardHolderHintColor" format="color|reference"/>
-        <!-- Expiry hint text color -->
-        <attr name="expireDateHintColor" format="color|reference"/>
-        <!-- CVV hint text color-->
-        <attr name="cvvHintColor" format="color|reference"/>
+        <!-- Text color for all hints -->
+        <attr name="hintColor" />
+
+        <!-- Text color for all labels -->
+        <attr name="labelColor" format="color" />
+
+        <!-- Text color for all errors -->
+        <attr name="errorColor" format="color" />
+
+        <!-- Size of all texts that are not labels or errors -->
+        <attr name="textSize" />
+
+        <!-- Size of all labels' texts -->
+        <attr name="labelSize" format="dimension" />
+
+        <!-- Size of all errors' texts -->
+        <attr name="errorSize" format="dimension" />
+
+        <!-- Size of the number's text, this will override the textSize only for the number -->
+        <attr name="numberSize" format="dimension" />
+
+        <!-- Card front background -->
+        <attr name="frontBackground" format="reference|color" />
+
+        <!-- Card back background -->
+        <attr name="backBackground" format="reference|color" />
+
+        <!-- Card front logo -->
+        <attr name="frontLogo" format="reference" />
+
+        <!-- Card back logo -->
+        <attr name="backLogo" format="reference" />
+
+        <!-- Size of the logo on the front of the card -->
+        <attr name="frontLogoSize" format="dimension" />
+
+        <!-- Size of the logo on the back of the card -->
+        <attr name="backLogoSize" format="dimension" />
+
+        <!-- Cvv background -->
+        <attr name="cvvBackground" format="reference|color" />
+
+        <!-- Sign strip background -->
+        <attr name="signStripBackground" format="reference|color" />
+
+        <!-- Magnetic strip background -->
+        <attr name="magneticStripBackground" format="reference|color" />
+
+        <!-- Amex card style -->
+        <attr name="amexStyle" format="reference" />
+
+        <!-- Diners Club card style -->
+        <attr name="dinersStyle" format="reference" />
+
+        <!-- Discover card style -->
+        <attr name="discoverStyle" format="reference" />
+
+        <!-- Generic card style -->
+        <attr name="genericStyle" format="reference" />
+
+        <!-- JCB card style -->
+        <attr name="jcbStyle" format="reference" />
+
+        <!-- Maestro card style -->
+        <attr name="maestroStyle" format="reference" />
+
+        <!-- Mastercard card style -->
+        <attr name="mastercardStyle" format="reference" />
+
+        <!-- Unionpay card style -->
+        <attr name="unionpayStyle" format="reference" />
+
+        <!-- Visa card style -->
+        <attr name="visaStyle" format="reference" />
     </declare-styleable>
 </resources>
