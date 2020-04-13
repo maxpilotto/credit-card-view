@@ -1140,34 +1140,34 @@ class CreditCardView : LinearLayout {
     ) {
         with(typedArray) {
             cardFront.background = getDrawable(
-                R.styleable.CreditCardView_frontBackground,
+                R.styleable.CreditCardView_cardFrontBackground,
                 cardFront.background
             )
             cardBack.background = getDrawable(
-                R.styleable.CreditCardView_backBackground,
+                R.styleable.CreditCardView_cardBackBackground,
                 cardBack.background
             )
             cardFrontLogo.setImageDrawable(
                 getDrawable(
-                    R.styleable.CreditCardView_frontLogo,
+                    R.styleable.CreditCardView_cardFrontLogo,
                     cardFrontLogo.drawable
                 )
             )
             cardBackLogo.setImageDrawable(
                 getDrawable(
-                    R.styleable.CreditCardView_backLogo,
+                    R.styleable.CreditCardView_cardBackLogo,
                     cardBackLogo.drawable
                 )
             )
             cardFrontLogo.setSizes(
                 getDimensionPixelSize(
-                    R.styleable.CreditCardView_frontLogoSize,
+                    R.styleable.CreditCardView_cardFrontLogoSize,
                     LOGO_FRONT
                 )
             )
             cardBackLogo.setSizes(
                 getDimensionPixelSize(
-                    R.styleable.CreditCardView_backLogoSize,
+                    R.styleable.CreditCardView_cardBackLogoSize,
                     LOGO_BACK
                 )
             )
@@ -1184,45 +1184,45 @@ class CreditCardView : LinearLayout {
                 cardMagneticStrip.background
             )
 
-            numberFillers = getXmlOrNull(R.styleable.CreditCardView_numberFillers) {
+            numberFillers = getXmlOrNull(R.styleable.CreditCardView_cardNumberFillers) {
                 Filler.parseList(it)
             } ?: numberFillers
-            cvvFillers = getXmlOrNull(R.styleable.CreditCardView_cvvFillers) {
+            cvvFillers = getXmlOrNull(R.styleable.CreditCardView_cardCvvFillers) {
                 Filler.parseList(it)
             } ?: cvvFillers
             numberFormat = NumberFormat(
-                getString(R.styleable.CreditCardView_numberFormat) ?: numberFormat?.format
+                getString(R.styleable.CreditCardView_cardNumberFormat) ?: numberFormat?.format
             )
-            textColor = getColor(R.styleable.CreditCardView_textColor, textColor)
-            textSize = getDimensionFontSize(R.styleable.CreditCardView_textSize, textSize)
-            labelColor = getColor(R.styleable.CreditCardView_labelColor, labelColor)
-            labelSize = getDimensionFontSize(R.styleable.CreditCardView_labelSize, labelSize)
-            errorColor = getColor(R.styleable.CreditCardView_labelColor, errorColor)
-            errorSize = getDimensionFontSize(R.styleable.CreditCardView_labelSize, errorSize)
-            hintColor = getColor(R.styleable.CreditCardView_hintColor, hintColor)
-            holderHint = getString(R.styleable.CreditCardView_holderHint) ?: holderHint
-            holderError = getString(R.styleable.CreditCardView_holderError) ?: holderError
-            holderLabel = getString(R.styleable.CreditCardView_holderLabel) ?: holderLabel
-            numberSize = getDimensionFontSize(R.styleable.CreditCardView_numberSize, numberSize)
-            numberError = getString(R.styleable.CreditCardView_numberError) ?: numberError
-            numberHint = getString(R.styleable.CreditCardView_numberHint) ?: numberHint
-            cvvHint = getString(R.styleable.CreditCardView_cvvHint) ?: cvvHint
-            cvvError = getString(R.styleable.CreditCardView_cvvError) ?: cvvError
-            cvvTextColor = getColor(R.styleable.CreditCardView_cvvTextColor, cvvTextColor)
-            cvvSize = getDimensionFontSize(R.styleable.CreditCardView_cvvSize, cvvSize)
-            expiryHint = getString(R.styleable.CreditCardView_expiryHint) ?: expiryHint
-            expiryError = getString(R.styleable.CreditCardView_expiryError) ?: expiryError
-            expiryLabel = getString(R.styleable.CreditCardView_expiryLabel) ?: expiryLabel
-            isFlipped = getBoolean(R.styleable.CreditCardView_flipped, isFlipped)
+            textColor = getColor(R.styleable.CreditCardView_cardTextColor, textColor)
+            textSize = getDimensionFontSize(R.styleable.CreditCardView_cardTextSize, textSize)
+            labelColor = getColor(R.styleable.CreditCardView_cardLabelColor, labelColor)
+            labelSize = getDimensionFontSize(R.styleable.CreditCardView_cardLabelSize, labelSize)
+            errorColor = getColor(R.styleable.CreditCardView_cardLabelColor, errorColor)
+            errorSize = getDimensionFontSize(R.styleable.CreditCardView_cardLabelSize, errorSize)
+            hintColor = getColor(R.styleable.CreditCardView_cardHintColor, hintColor)
+            holderHint = getString(R.styleable.CreditCardView_cardHolderHint) ?: holderHint
+            holderError = getString(R.styleable.CreditCardView_cardHolderError) ?: holderError
+            holderLabel = getString(R.styleable.CreditCardView_cardHolderLabel) ?: holderLabel
+            numberSize = getDimensionFontSize(R.styleable.CreditCardView_cardNumberSize, numberSize)
+            numberError = getString(R.styleable.CreditCardView_cardNumberError) ?: numberError
+            numberHint = getString(R.styleable.CreditCardView_cardNumberHint) ?: numberHint
+            cvvHint = getString(R.styleable.CreditCardView_cardCvvHint) ?: cvvHint
+            cvvError = getString(R.styleable.CreditCardView_cardCvvError) ?: cvvError
+            cvvTextColor = getColor(R.styleable.CreditCardView_cardCvvTextColor, cvvTextColor)
+            cvvSize = getDimensionFontSize(R.styleable.CreditCardView_cardCvvSize, cvvSize)
+            expiryHint = getString(R.styleable.CreditCardView_cardExpiryHint) ?: expiryHint
+            expiryError = getString(R.styleable.CreditCardView_cardExpiryError) ?: expiryError
+            expiryLabel = getString(R.styleable.CreditCardView_cardExpiryLabel) ?: expiryLabel
+            isFlipped = getBoolean(R.styleable.CreditCardView_cardIsFlipped, isFlipped)
             flipOnClick = getBoolean(R.styleable.CreditCardView_flipOnClick, flipOnClick)
             flipOnEdit = getBoolean(R.styleable.CreditCardView_flipOnEdit, flipOnEdit)
             formatExpiry = getBoolean(R.styleable.CreditCardView_autoFormatExpiry, formatExpiry)
 
             if (firstRun) {
-                cvv = getString(R.styleable.CreditCardView_cvv) ?: cvv
-                expiry = getString(R.styleable.CreditCardView_expiry) ?: expiry
-                holder = getString(R.styleable.CreditCardView_holder) ?: holder
-                number = getString(R.styleable.CreditCardView_number) ?: number
+                cvv = getString(R.styleable.CreditCardView_cardCvv) ?: cvv
+                expiry = getString(R.styleable.CreditCardView_cardExpiry) ?: expiry
+                holder = getString(R.styleable.CreditCardView_cardHolder) ?: holder
+                number = getString(R.styleable.CreditCardView_cardNumber) ?: number
             }
 
         }

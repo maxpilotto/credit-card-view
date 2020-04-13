@@ -12,14 +12,14 @@
         android:layout_width="300dp"
         android:layout_height="200dp"
 
-        app:expiryHint="12/20"
-        app:expiryLabel="Expiry"
-        app:holderHint="John Doe"
-        app:holderLabel="Holder"
-        app:numberFormat="%s4"
-        app:numberHint="**** **** **** ****"
-        app:cvvFillers="@xml/cvv_fillers"
-        app:numberFillers="@xml/number_fillers"
+        app:cardExpiryHint="12/20"
+        app:cardExpiryLabel="Expiry"
+        app:cardHolderHint="John Doe"
+        app:cardHolderLabel="Holder"
+        app:cardNumberFormat="%s4"
+        app:cardNumberHint="**** **** **** ****"
+        app:cardCvvFillers="@xml/cvv_fillers"
+        app:cardNumberFillers="@xml/number_fillers"
 
         app:visaStyle="@style/DefaultVisa"/>
 
