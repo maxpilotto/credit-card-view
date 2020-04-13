@@ -91,7 +91,7 @@
         <attr name="cardErrorColor" format="color" />
 
         <!-- Size of all texts that are not labels or errors -->
-        <attr name="cardTextSize" format="color" />
+        <attr name="cardTextSize" format="dimension" />
 
         <!-- Size of all labels' texts -->
         <attr name="cardLabelSize" format="dimension" />
