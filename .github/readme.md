@@ -27,7 +27,6 @@ In your modules's build.gradle
 ```gradle
 dependencies {
     implementation 'com.github.maxpilotto:credit-card-view:$latest_version'
-    implementation 'androidx.constraintlayout:constraintlayout:+'
 }
 ```
 
@@ -38,12 +37,12 @@ dependencies {
     android:layout_width="300dp"
     android:layout_height="200dp"
 
-    app:cvv="123"
-    app:expiry="1234"
-    app:holder="John Doe"
-    app:number="5201284799337668"
-    app:holderLabel="Holder"
-    app:expiryLabel="Expiry"/>
+    app:cardCvv="123"
+    app:cardExpiry="1234"
+    app:cardHolder="John Doe"
+    app:cardNumber="5201284799337668"
+    app:cardHolderLabel="Holder"
+    app:cardExpiryLabel="Expiry"/>
 ```
 <img src="res/card1.png" width="200">
 
