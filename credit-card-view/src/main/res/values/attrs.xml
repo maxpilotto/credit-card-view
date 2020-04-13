@@ -2,75 +2,75 @@
 <resources>
     <declare-styleable name="CreditCardView">
         <!-- Number on the card's front -->
-        <attr name="number" format="string" />
+        <attr name="cardNumber" format="string" />
 
         <!-- Holder name on the card's front -->
-        <attr name="holder" format="string" />
+        <attr name="cardHolder" format="string" />
 
         <!-- Expiration date on the card's back -->
-        <attr name="expiry" format="string" />
+        <attr name="cardExpiry" format="string" />
 
         <!-- CVV number, located on the back of the card -->
-        <attr name="cvv" format="string" />
+        <attr name="cardCvv" format="string" />
 
         <!-- Format used to display the credit card's number,
              take a look at the NumberFormat class for more info
         -->
-        <attr name="numberFormat" format="string" />
+        <attr name="cardNumberFormat" format="string" />
 
         <!-- XML file containing the fillers used for the credit card's number,
              take a look at the Filler class for more info on how to use them and how to write the
              XML file
          -->
-        <attr name="numberFillers" format="reference" />
+        <attr name="cardNumberFillers" format="reference" />
 
         <!-- XML file containing the fillers used for the credit card's cvv,
              take a look at the Filler class for more info on how to use them and how to write the
              XML file
         -->
-        <attr name="cvvFillers" format="reference" />
+        <attr name="cardCvvFillers" format="reference" />
 
         <!-- Color of the cvv's text -->
-        <attr name="cvvTextColor" format="color" />
+        <attr name="cardCvvTextColor" format="color" />
 
         <!-- Hint of the number's TextView -->
-        <attr name="numberHint" format="string" />
+        <attr name="cardNumberHint" format="string" />
 
         <!-- Text of the error below the number's view -->
-        <attr name="numberError" format="string" />
+        <attr name="cardNumberError" format="string" />
 
         <!-- Hint of the holder's TextView -->
-        <attr name="holderHint" format="string" />
+        <attr name="cardHolderHint" format="string" />
 
         <!-- Text of the label above the holder's view -->
-        <attr name="holderLabel" format="string" />
+        <attr name="cardHolderLabel" format="string" />
 
         <!-- Text of the error below the holder's view -->
-        <attr name="holderError" format="string" />
+        <attr name="cardHolderError" format="string" />
 
         <!-- If true this will automatically add a "/" after the second digit of the expiry, enabled by default -->
         <attr name="autoFormatExpiry" format="boolean" />
 
         <!-- Hint of the expiry's TextView -->
-        <attr name="expiryHint" format="string" />
+        <attr name="cardExpiryHint" format="string" />
 
         <!-- Text of the label above the expiry's view -->
-        <attr name="expiryLabel" format="string" />
+        <attr name="cardExpiryLabel" format="string" />
 
         <!-- Text of the error below the expiry's view -->
-        <attr name="expiryError" format="string" />
+        <attr name="cardExpiryError" format="string" />
 
         <!-- Hint of the cvv's TextView -->
-        <attr name="cvvHint" format="string" />
+        <attr name="cardCvvHint" format="string" />
 
         <!-- Text of the error below the cvv's view -->
-        <attr name="cvvError" format="string" />
+        <attr name="cardCvvError" format="string" />
 
         <!-- Size of the cvv's text, this will override the textSize only for the cvv -->
-        <attr name="cvvSize" format="dimension" />
+        <attr name="cardCvvSize" format="dimension" />
 
         <!-- Flipped value, False means that the front side is showing, True means that the back side is showing -->
-        <attr name="flipped" format="boolean" />
+        <attr name="cardIsFlipped" format="boolean" />
 
         <!-- Flips the card when it's clicked, disabled by default -->
         <attr name="flipOnClick" format="boolean" />
@@ -79,46 +79,46 @@
         <attr name="flipOnEdit" format="boolean" />
 
         <!-- Text color for all texts that are not labels or errors -->
-        <attr name="textColor" />
+        <attr name="cardTextColor" format="color"/>
 
         <!-- Text color for all hints -->
-        <attr name="hintColor" />
+        <attr name="cardHintColor" format="color"/>
 
         <!-- Text color for all labels -->
-        <attr name="labelColor" format="color" />
+        <attr name="cardLabelColor" format="color" />
 
         <!-- Text color for all errors -->
-        <attr name="errorColor" format="color" />
+        <attr name="cardErrorColor" format="color" />
 
         <!-- Size of all texts that are not labels or errors -->
-        <attr name="textSize" />
+        <attr name="cardTextSize" format="color" />
 
         <!-- Size of all labels' texts -->
-        <attr name="labelSize" format="dimension" />
+        <attr name="cardLabelSize" format="dimension" />
 
         <!-- Size of all errors' texts -->
-        <attr name="errorSize" format="dimension" />
+        <attr name="cardErrorSize" format="dimension" />
 
         <!-- Size of the number's text, this will override the textSize only for the number -->
-        <attr name="numberSize" format="dimension" />
+        <attr name="cardNumberSize" format="dimension" />
 
         <!-- Card front background -->
-        <attr name="frontBackground" format="reference|color" />
+        <attr name="cardFrontBackground" format="reference|color" />
 
         <!-- Card back background -->
-        <attr name="backBackground" format="reference|color" />
+        <attr name="cardBackBackground" format="reference|color" />
 
         <!-- Card front logo -->
-        <attr name="frontLogo" format="reference" />
+        <attr name="cardFrontLogo" format="reference" />
 
         <!-- Card back logo -->
-        <attr name="backLogo" format="reference" />
+        <attr name="cardBackLogo" format="reference" />
 
         <!-- Size of the logo on the front of the card -->
-        <attr name="frontLogoSize" format="dimension" />
+        <attr name="cardFrontLogoSize" format="dimension" />
 
         <!-- Size of the logo on the back of the card -->
-        <attr name="backLogoSize" format="dimension" />
+        <attr name="cardBackLogoSize" format="dimension" />
 
         <!-- Cvv background -->
         <attr name="cvvBackground" format="reference|color" />

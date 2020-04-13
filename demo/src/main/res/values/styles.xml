@@ -7,23 +7,23 @@
     </style>
 
     <style name="Generic">
-        <item name="frontBackground">#008577</item>
-        <item name="backBackground">#008577</item>
+        <item name="cardFrontBackground">#008577</item>
+        <item name="cardBackBackground">#008577</item>
     </style>
 
     <style name="Visa">
-        <item name="frontBackground">#00ff00</item>
-        <item name="backBackground">#ffff00</item>
+        <item name="cardFrontBackground">#00ff00</item>
+        <item name="cardBackBackground">#ffff00</item>
     </style>
 
     <style name="Amex">
-        <item name="frontBackground">#00ff00</item>
-        <item name="backBackground">#00FF00</item>
+        <item name="cardFrontBackground">#00ff00</item>
+        <item name="cardBackBackground">#00FF00</item>
     </style>
 
     <style name="Maestro">
-        <item name="frontBackground">#0000ff</item>
-        <item name="textColor">#ffff00</item>
+        <item name="cardFrontBackground">#0000ff</item>
+        <item name="cardTextColor">#ffff00</item>
     </style>
 
 </resources>
